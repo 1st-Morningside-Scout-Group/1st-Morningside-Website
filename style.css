@@ -1,9 +1,359 @@
+```css
+/* =========================================================
+   1st Morningside Scout Group
+   Modern Website Styles
+   ========================================================= */
 
-body {font-family: Arial, sans-serif; margin:0; background:#f4f4f4;}
-header {background:#4B2E83; color:white; padding:20px; text-align:center;}
-nav {background:#3B6E3F; padding:10px; text-align:center;}
-nav a {color:white; margin:0 10px; text-decoration:none;}
-main {padding:20px;}
-.card {background:white; padding:20px; border-radius:10px; margin-bottom:20px;}
-footer {background:#4B2E83; color:white; text-align:center; padding:10px;}
-iframe {border:none; width:100%; height:700px;}
+
+/* ---------- General Page ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f6f7f9;
+    color: #252525;
+    line-height: 1.7;
+}
+
+
+/* ---------- Header ---------- */
+
+header {
+    background: linear-gradient(135deg, #4B2E83, #6543a5);
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    margin: 8px 0 0;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+
+/* ---------- Navigation ---------- */
+
+nav {
+    background: #ffffff;
+    padding: 14px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+nav a {
+    display: inline-block;
+    color: #333333;
+    margin: 4px 7px;
+    padding: 8px 13px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    background: #4B2E83;
+    color: white;
+    transform: translateY(-1px);
+}
+
+
+/* ---------- Main Content ---------- */
+
+main {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 25px 70px;
+}
+
+main > h2 {
+    color: #4B2E83;
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+
+/* ---------- Cards ---------- */
+
+.card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    border: 1px solid #e8e8ec;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.09);
+}
+
+.card h3 {
+    color: #4B2E83;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.45rem;
+}
+
+.card p {
+    margin-top: 8px;
+    margin-bottom: 15px;
+}
+
+.card ul {
+    padding-left: 25px;
+}
+
+.card li {
+    margin-bottom: 8px;
+}
+
+
+/* ---------- Links ---------- */
+
+a {
+    color: #4B2E83;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #3B6E3F;
+}
+
+
+/* ---------- Buttons ---------- */
+
+button {
+    background: #4B2E83;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 9px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: #3B6E3F;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ---------- Form Elements ---------- */
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border: 1px solid #d7d7dc;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #252525;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #4B2E83;
+    box-shadow: 0 0 0 3px rgba(75, 46, 131, 0.12);
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    background: #29233b;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+
+/* ---------- Iframes ---------- */
+
+iframe {
+    display: block;
+    width: 100%;
+    height: 700px;
+    border: none;
+    border-radius: 14px;
+    background: white;
+}
+
+
+/* ---------- Tables ---------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th {
+    background: #4B2E83;
+    color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+td {
+    padding: 13px 14px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+tr:hover td {
+    background: #f7f5fb;
+}
+
+
+/* ---------- Images ---------- */
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+
+/* ---------- Horizontal Rule ---------- */
+
+hr {
+    border: none;
+    height: 1px;
+    background: #e5e5e8;
+    margin: 30px 0;
+}
+
+
+/* ---------- Special Reflection Sections ---------- */
+
+.reflection-positive {
+    border-left: 5px solid #3B6E3F;
+}
+
+.reflection-negative {
+    border-left: 5px solid #c94c4c;
+}
+
+.reflection-improve {
+    border-left: 5px solid #4B2E83;
+}
+
+
+/* ---------- Small Labels ---------- */
+
+.label {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #eee9f7;
+    color: #4B2E83;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 35px 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        position: relative;
+        padding: 10px;
+    }
+
+    nav a {
+        display: block;
+        margin: 4px 0;
+        padding: 10px;
+    }
+
+    main {
+        padding: 35px 15px 50px;
+    }
+
+    main > h2 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        padding: 22px;
+        border-radius: 13px;
+    }
+
+    .card h3 {
+        font-size: 1.3rem;
+    }
+
+    iframe {
+        height: 500px;
+    }
+}
+
+
+/* ---------- Accessibility ---------- */
+
+:focus-visible {
+    outline: 3px solid rgba(75, 46, 131, 0.35);
+    outline-offset: 3px;
+}
+```
