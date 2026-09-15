@@ -23,13 +23,33 @@ body {
 
 
 /* =========================================================
+   COLOUR PALETTE
+========================================================= */
+
+/*
+   Main Purple:        #4B2E83
+   Dark Purple:        #35205F
+   Light Purple:      #6B4FA3
+   Very Light Purple: #F2EEFA
+*/
+
+
+/* =========================================================
    HEADER
 ========================================================= */
 
 header {
-    background: linear-gradient(135deg, #4B2E83, #6241a3);
+    background: linear-gradient(
+        135deg,
+        #35205F,
+        #4B2E83,
+        #6B4FA3
+    );
+
     color: white;
+
     text-align: center;
+
     padding: 42px 20px;
 }
 
@@ -40,7 +60,9 @@ header h1 {
 
 header p {
     margin-top: 6px;
+
     font-size: 1rem;
+
     opacity: 0.9;
 }
 
@@ -51,48 +73,61 @@ header p {
 
 nav {
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     flex-wrap: wrap;
 
     gap: 4px;
 
-    background: #3B6E3F;
+    background: #35205F;
 
     padding: 11px 15px;
 
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.18);
 }
 
 nav a {
     color: white;
+
     text-decoration: none;
 
     font-size: 0.9rem;
+
     font-weight: 600;
 
     padding: 8px 12px;
 
     border-radius: 7px;
 
-    transition: background 0.2s ease;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 nav a:hover {
-    background: rgba(255, 255, 255, 0.16);
+    background: #6B4FA3;
+
+    transform: translateY(-1px);
 }
 
 
 /* =========================================================
-   MAIN
+   MAIN CONTENT
 ========================================================= */
 
 main {
     width: 100%;
+
     max-width: 1600px;
 
     margin: 0 auto;
@@ -114,7 +149,10 @@ main {
 
     margin-bottom: 25px;
 
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(75, 46, 131, 0.08);
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.07);
 }
 
 .card h2,
@@ -133,31 +171,51 @@ main {
 button {
     display: inline-block;
 
-    background: #4B2E83;
+    background: linear-gradient(
+        135deg,
+        #35205F,
+        #4B2E83
+    );
+
     color: white;
 
     border: none;
+
     border-radius: 8px;
 
     padding: 12px 20px;
 
     font-family: inherit;
+
     font-size: 1rem;
+
     font-weight: 700;
 
     text-decoration: none;
 
     cursor: pointer;
 
+    box-shadow:
+        0 5px 15px rgba(75, 46, 131, 0.22);
+
     transition:
         transform 0.2s ease,
+        box-shadow 0.2s ease,
         background 0.2s ease;
 }
 
 .button:hover,
 button:hover {
-    background: #3B6E3F;
+    background: linear-gradient(
+        135deg,
+        #4B2E83,
+        #6B4FA3
+    );
+
     transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(75, 46, 131, 0.3);
 }
 
 
@@ -167,7 +225,14 @@ button:hover {
 
 main a:not(.button) {
     color: #4B2E83;
+
     font-weight: 600;
+}
+
+main a:not(.button):hover {
+    color: #6B4FA3;
+
+    text-decoration: underline;
 }
 
 
@@ -177,7 +242,9 @@ main a:not(.button) {
 
 img {
     max-width: 100%;
+
     height: auto;
+
     display: block;
 }
 
@@ -188,10 +255,17 @@ img {
 
 iframe {
     width: 100%;
+
     border: none;
+
     border-radius: 15px;
+
     background: white;
+
     display: block;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.07);
 }
 
 
@@ -205,8 +279,12 @@ form {
 
 label {
     display: block;
+
     margin-bottom: 7px;
+
     font-weight: 700;
+
+    color: #35205F;
 }
 
 input,
@@ -223,9 +301,14 @@ select {
     background: white;
 
     font-family: inherit;
+
     font-size: 1rem;
 
     margin-bottom: 18px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 input:focus,
@@ -235,11 +318,13 @@ select:focus {
 
     border-color: #4B2E83;
 
-    box-shadow: 0 0 0 3px rgba(75, 46, 131, 0.12);
+    box-shadow:
+        0 0 0 3px rgba(75, 46, 131, 0.13);
 }
 
 textarea {
     min-height: 150px;
+
     resize: vertical;
 }
 
@@ -250,6 +335,7 @@ textarea {
 
 .table-container {
     width: 100%;
+
     overflow-x: auto;
 
     background: white;
@@ -259,6 +345,7 @@ textarea {
 
 table {
     width: 100%;
+
     border-collapse: collapse;
 }
 
@@ -273,7 +360,12 @@ td {
 
 th {
     background: #4B2E83;
+
     color: white;
+}
+
+tr:last-child td {
+    border-bottom: none;
 }
 
 
@@ -286,11 +378,15 @@ th {
 
     margin-bottom: 20px;
 
-    border-left: 5px solid #3B6E3F;
+    border-left: 5px solid #4B2E83;
 
     border-radius: 7px;
 
-    background: #edf5ee;
+    background: #F2EEFA;
+}
+
+.notice strong {
+    color: #35205F;
 }
 
 
@@ -299,14 +395,15 @@ th {
 ========================================================= */
 
 /*
-   Four cards across the page,
-   similar to the Jeppe Boys layout.
+   Four cards across the page.
+   Inspired by the layout shown in the Jeppe reference.
 */
 
 .reflection-grid {
     display: grid;
 
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
     gap: 30px;
 
@@ -314,21 +411,28 @@ th {
 }
 
 
-/* Individual camp card */
+/* =========================================================
+   CAMP CARD
+========================================================= */
 
 .reflection-card {
     background: #ffffff;
 
     display: flex;
+
     flex-direction: column;
 
     min-height: 600px;
 
     overflow: hidden;
 
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
-
     border-radius: 0;
+
+    border:
+        1px solid rgba(75, 46, 131, 0.08);
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.08);
 
     transition:
         transform 0.25s ease,
@@ -338,11 +442,14 @@ th {
 .reflection-card:hover {
     transform: translateY(-5px);
 
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+    box-shadow:
+        0 12px 28px rgba(75, 46, 131, 0.18);
 }
 
 
-/* Camp image */
+/* =========================================================
+   CAMP IMAGE
+========================================================= */
 
 .reflection-image {
     width: 100%;
@@ -357,7 +464,9 @@ th {
 }
 
 
-/* Text section */
+/* =========================================================
+   CAMP CONTENT
+========================================================= */
 
 .reflection-content {
     flex: 1;
@@ -365,14 +474,17 @@ th {
     padding: 35px 25px 25px;
 
     display: flex;
+
     flex-direction: column;
 }
 
 
-/* Camp title */
+/* =========================================================
+   CAMP TITLE
+========================================================= */
 
 .reflection-content h2 {
-    color: #111;
+    color: #222;
 
     font-size: 1.2rem;
 
@@ -386,7 +498,9 @@ th {
 }
 
 
-/* Camp description */
+/* =========================================================
+   CAMP DESCRIPTION
+========================================================= */
 
 .reflection-content p {
     color: #999;
@@ -401,14 +515,25 @@ th {
 }
 
 
-/* Bottom coloured strip */
+/* =========================================================
+   CAMP CARD BOTTOM STRIP
+========================================================= */
 
 .reflection-footer {
     height: 20px;
 
     flex-shrink: 0;
 
-    background: #f5b719;
+    background: #4B2E83;
+}
+
+
+/* =========================================================
+   ALTERNATIVE LIGHT PURPLE STRIP
+========================================================= */
+
+.reflection-card:nth-child(even) .reflection-footer {
+    background: #6B4FA3;
 }
 
 
@@ -417,7 +542,7 @@ th {
 ========================================================= */
 
 footer {
-    background: #4B2E83;
+    background: #35205F;
 
     color: white;
 
@@ -430,6 +555,8 @@ footer p {
     margin: 0;
 
     font-size: 0.9rem;
+
+    opacity: 0.9;
 }
 
 
@@ -438,7 +565,8 @@ footer p {
 ========================================================= */
 
 :focus-visible {
-    outline: 3px solid #8d70c4;
+    outline: 3px solid #6B4FA3;
+
     outline-offset: 3px;
 }
 
@@ -450,7 +578,8 @@ footer p {
 @media (max-width: 1100px) {
 
     .reflection-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
 }
@@ -476,6 +605,7 @@ footer p {
 
     nav a {
         font-size: 0.82rem;
+
         padding: 7px 9px;
     }
 
@@ -501,6 +631,40 @@ footer p {
         margin-bottom: 50px;
     }
 
+    .button,
+    button {
+        width: 100%;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        font-size: 0.78rem;
+
+        padding: 6px 8px;
+    }
+
+    .card {
+        padding: 17px;
+    }
+
+    .reflection-image {
+        height: 200px;
+    }
+
 }
 
 
@@ -518,6 +682,8 @@ footer p {
     *::before,
     *::after {
         transition: none !important;
+
         animation: none !important;
     }
+
 }
