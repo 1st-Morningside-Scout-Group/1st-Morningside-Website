@@ -1,6 +1,11 @@
 /* =========================================================
    1ST MORNINGSIDE SCOUT GROUP
-   MAIN WEBSITE STYLESHEET
+   COMPLETE WEBSITE STYLESHEET
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
 ========================================================= */
 
 * {
@@ -27,9 +32,9 @@ body {
 ========================================================= */
 
 /*
-   Main Purple:        #4B2E83
    Dark Purple:        #35205F
-   Light Purple:      #6B4FA3
+   Main Purple:        #4B2E83
+   Light Purple:       #6B4FA3
    Very Light Purple: #F2EEFA
 */
 
@@ -47,7 +52,6 @@ header {
     );
 
     color: white;
-
     text-align: center;
 
     padding: 42px 20px;
@@ -60,9 +64,7 @@ header h1 {
 
 header p {
     margin-top: 6px;
-
     font-size: 1rem;
-
     opacity: 0.9;
 }
 
@@ -73,17 +75,12 @@ header p {
 
 nav {
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     flex-wrap: wrap;
 
     gap: 4px;
@@ -92,8 +89,7 @@ nav {
 
     padding: 11px 15px;
 
-    box-shadow:
-        0 3px 12px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
 }
 
 nav a {
@@ -102,7 +98,6 @@ nav a {
     text-decoration: none;
 
     font-size: 0.9rem;
-
     font-weight: 600;
 
     padding: 8px 12px;
@@ -127,12 +122,17 @@ nav a:hover {
 
 main {
     width: 100%;
-
     max-width: 1600px;
 
     margin: 0 auto;
 
     padding: 40px 30px 60px;
+}
+
+main h1,
+main h2,
+main h3 {
+    color: #35205F;
 }
 
 
@@ -159,6 +159,10 @@ main {
 .card h3 {
     color: #4B2E83;
 
+    margin-bottom: 12px;
+}
+
+.card p {
     margin-bottom: 12px;
 }
 
@@ -212,6 +216,8 @@ button:hover {
         #6B4FA3
     );
 
+    color: white;
+
     transform: translateY(-2px);
 
     box-shadow:
@@ -223,13 +229,13 @@ button:hover {
    GENERAL LINKS
 ========================================================= */
 
-main a:not(.button) {
+main a:not(.button):not(.reflection-card-link):not(.reflection-button) {
     color: #4B2E83;
 
     font-weight: 600;
 }
 
-main a:not(.button):hover {
+main a:not(.button):not(.reflection-card-link):not(.reflection-button):hover {
     color: #6B4FA3;
 
     text-decoration: underline;
@@ -242,7 +248,6 @@ main a:not(.button):hover {
 
 img {
     max-width: 100%;
-
     height: auto;
 
     display: block;
@@ -250,7 +255,7 @@ img {
 
 
 /* =========================================================
-   IFRAMES
+   IFRAMES / EMBEDS
 ========================================================= */
 
 iframe {
@@ -263,6 +268,19 @@ iframe {
     background: white;
 
     display: block;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+.embed-container {
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: white;
 
     box-shadow:
         0 6px 20px rgba(0, 0, 0, 0.07);
@@ -282,9 +300,9 @@ label {
 
     margin-bottom: 7px;
 
-    font-weight: 700;
-
     color: #35205F;
+
+    font-weight: 700;
 }
 
 input,
@@ -299,6 +317,8 @@ select {
     border-radius: 8px;
 
     background: white;
+
+    color: #222;
 
     font-family: inherit;
 
@@ -362,6 +382,8 @@ th {
     background: #4B2E83;
 
     color: white;
+
+    font-weight: 700;
 }
 
 tr:last-child td {
@@ -391,13 +413,35 @@ tr:last-child td {
 
 
 /* =========================================================
-   CAMP REFLECTIONS
+   CAMP REFLECTION INTRO
 ========================================================= */
 
-/*
-   Four cards across the page.
-   Inspired by the layout shown in the Jeppe reference.
-*/
+.reflection-intro {
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: 0 auto 35px;
+}
+
+.reflection-intro h2 {
+    color: #35205F;
+
+    font-size: 2.2rem;
+
+    margin-bottom: 8px;
+}
+
+.reflection-intro p {
+    color: #666;
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================================================
+   CAMP REFLECTION GRID
+========================================================= */
 
 .reflection-grid {
     display: grid;
@@ -412,7 +456,31 @@ tr:last-child td {
 
 
 /* =========================================================
-   CAMP CARD
+   CLICKABLE CAMP CARD LINK
+========================================================= */
+
+.reflection-card-link {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.reflection-card-link:hover {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   CAMP REFLECTION CARD
 ========================================================= */
 
 .reflection-card {
@@ -422,7 +490,9 @@ tr:last-child td {
 
     flex-direction: column;
 
-    min-height: 600px;
+    height: 100%;
+
+    min-height: 620px;
 
     overflow: hidden;
 
@@ -439,16 +509,19 @@ tr:last-child td {
         box-shadow 0.25s ease;
 }
 
-.reflection-card:hover {
-    transform: translateY(-5px);
+
+/* Hover the entire block */
+
+.reflection-card-link:hover .reflection-card {
+    transform: translateY(-7px);
 
     box-shadow:
-        0 12px 28px rgba(75, 46, 131, 0.18);
+        0 14px 30px rgba(75, 46, 131, 0.22);
 }
 
 
 /* =========================================================
-   CAMP IMAGE
+   CAMP REFLECTION IMAGE
 ========================================================= */
 
 .reflection-image {
@@ -465,7 +538,7 @@ tr:last-child td {
 
 
 /* =========================================================
-   CAMP CONTENT
+   CAMP REFLECTION CONTENT
 ========================================================= */
 
 .reflection-content {
@@ -480,7 +553,7 @@ tr:last-child td {
 
 
 /* =========================================================
-   CAMP TITLE
+   CAMP REFLECTION TITLE
 ========================================================= */
 
 .reflection-content h2 {
@@ -492,31 +565,75 @@ tr:last-child td {
 
     text-transform: uppercase;
 
-    margin-bottom: 75px;
+    margin-bottom: 25px;
 
     font-weight: 700;
 }
 
 
 /* =========================================================
-   CAMP DESCRIPTION
+   CAMP REFLECTION DESCRIPTION
 ========================================================= */
 
 .reflection-content p {
-    color: #999;
+    color: #888;
 
     font-size: 0.95rem;
 
-    line-height: 1.45;
+    line-height: 1.5;
 
-    margin-top: auto;
-
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 
 /* =========================================================
-   CAMP CARD BOTTOM STRIP
+   CAMP REFLECTION BUTTON
+========================================================= */
+
+.reflection-button {
+    display: block;
+
+    width: fit-content;
+
+    margin: auto auto 0;
+
+    padding: 10px 18px;
+
+    background: #4B2E83;
+
+    color: white !important;
+
+    text-decoration: none !important;
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    border-radius: 7px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Hovering anywhere on card changes button */
+
+.reflection-card-link:hover .reflection-button {
+    background: #6B4FA3;
+
+    color: white !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(75, 46, 131, 0.25);
+}
+
+
+/* =========================================================
+   CAMP REFLECTION CARD BOTTOM STRIP
 ========================================================= */
 
 .reflection-footer {
@@ -528,12 +645,87 @@ tr:last-child td {
 }
 
 
-/* =========================================================
-   ALTERNATIVE LIGHT PURPLE STRIP
-========================================================= */
+/* Alternating purple shades */
 
 .reflection-card:nth-child(even) .reflection-footer {
     background: #6B4FA3;
+}
+
+
+/* =========================================================
+   INDIVIDUAL CAMP REFLECTION PAGE
+========================================================= */
+
+.camp-page {
+    background: white;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   INDIVIDUAL CAMP IMAGE
+========================================================= */
+
+.camp-page-image {
+    width: 100%;
+
+    height: 500px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================================================
+   INDIVIDUAL CAMP CONTENT
+========================================================= */
+
+.camp-page-content {
+    padding: 40px 50px 50px;
+}
+
+.camp-page-content h2 {
+    color: #35205F;
+
+    font-size: 2.4rem;
+
+    margin-bottom: 5px;
+}
+
+.camp-page-content p {
+    color: #555;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   CAMP DATE
+========================================================= */
+
+.camp-date {
+    color: #6B4FA3 !important;
+
+    font-size: 0.95rem !important;
+
+    font-weight: 700;
+
+    margin-bottom: 25px !important;
 }
 
 
@@ -549,6 +741,8 @@ footer {
     text-align: center;
 
     padding: 25px 20px;
+
+    margin-top: 20px;
 }
 
 footer p {
@@ -577,6 +771,11 @@ footer p {
 
 @media (max-width: 1100px) {
 
+    main {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
     .reflection-grid {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
@@ -601,6 +800,8 @@ footer p {
 
     nav {
         position: relative;
+
+        padding: 10px;
     }
 
     nav a {
@@ -613,6 +814,14 @@ footer p {
         padding: 25px 15px 45px;
     }
 
+    .reflection-intro {
+        margin-bottom: 25px;
+    }
+
+    .reflection-intro h2 {
+        font-size: 1.8rem;
+    }
+
     .reflection-grid {
         grid-template-columns: 1fr;
 
@@ -620,15 +829,37 @@ footer p {
     }
 
     .reflection-card {
-        min-height: 500px;
+        min-height: 520px;
     }
 
     .reflection-image {
         height: 230px;
     }
 
+    .reflection-content {
+        padding: 28px 22px 22px;
+    }
+
     .reflection-content h2 {
-        margin-bottom: 50px;
+        font-size: 1.25rem;
+
+        margin-bottom: 25px;
+    }
+
+    .reflection-button {
+        margin-top: 10px;
+    }
+
+    .camp-page-image {
+        height: 300px;
+    }
+
+    .camp-page-content {
+        padding: 30px 22px 35px;
+    }
+
+    .camp-page-content h2 {
+        font-size: 1.9rem;
     }
 
     .button,
@@ -651,6 +882,10 @@ footer p {
         font-size: 1.5rem;
     }
 
+    header p {
+        font-size: 0.9rem;
+    }
+
     nav a {
         font-size: 0.78rem;
 
@@ -663,6 +898,18 @@ footer p {
 
     .reflection-image {
         height: 200px;
+    }
+
+    .reflection-card {
+        min-height: 480px;
+    }
+
+    .camp-page-image {
+        height: 220px;
+    }
+
+    .camp-page-content {
+        padding: 25px 18px 30px;
     }
 
 }
